@@ -7,12 +7,7 @@
 ; union
 (= (atoms-union () $s2) $s2)
 (= (atoms-union (:: $head $tail) $s2)
-   (atoms-union-case (member $head $s2) $head $tail $s2))
-
-(= (atoms-union-case () $head $tail $s2)
    (:: $head (atoms-union $tail $s2)))
-(= (atoms-union-case (:: $found ()) $head $tail $s2)
-   (atoms-union $tail $s2))
 
 ; intersection
 (= (atoms-intersection () $s2) ())
